@@ -1,21 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+
+import { Teams } from './src/screens/teams';
+import { myTheme } from './src/styles/theme/theme';
+import { ThemeProvider } from './src/styles/theme/styled-components';
+import { AppContainer } from './src/components/container';
+
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your app!</Text>
+        <ThemeProvider theme={myTheme}>
             <StatusBar style="auto" />
-        </View>
+            <Teams />
+        </ThemeProvider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
